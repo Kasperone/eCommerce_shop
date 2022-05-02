@@ -1,9 +1,9 @@
 import mongoose from "mongoose"
 
-const userShema = mongoose.Shema(
+const userSchema = mongoose.Schema(
 	{
 		user: {
-			type: mongoose.Shema.Types.ObjectId,
+			type: mongoose.Schema.Types.ObjectId,
 			require: true,
 			ref: "User",
 		},
@@ -21,7 +21,7 @@ const userShema = mongoose.Shema(
 			require: true,
 		},
 		isAdmin: {
-			type: Boolen,
+			type: Boolean,
 			require: true,
 			default: false,
 		},
@@ -31,6 +31,6 @@ const userShema = mongoose.Shema(
 	}
 )
 
-const User = mongoose.model("User", userShema)
+const User = mongoose.model("User", userSchema)
 
 export default User
