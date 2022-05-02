@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 
-const orderShema = mongoose.Shema(
+const orderSchema = mongoose.Schema(
 	{
 		user: {
 			type: mongoose.Schema.Types.ObjectId,
@@ -14,7 +14,7 @@ const orderShema = mongoose.Shema(
 				image: { type: String, require: true },
 				price: { type: String, require: true },
 				product: {
-					type: mongoose.Shema.Types.ObjectId,
+					type: mongoose.Schema.Types.ObjectId,
 					require: true,
 					ref: "Product",
 				},
@@ -32,7 +32,7 @@ const orderShema = mongoose.Shema(
 			require: true,
 		},
 		paymentResult: {
-			id: { type: Strting },
+			id: { type: String },
 			status: { type: String },
 			update_time: { type: String },
 			email_address: { type: String },
@@ -57,24 +57,23 @@ const orderShema = mongoose.Shema(
 			require: true,
 			default: false,
 		},
-        paidAt: {
-            type: Date
-        },
-        isDelivered: {
-            type: Boolean,
-            require: true,
-            default: false,
-        },
-        deliveredAt: {
-            type: Date
-        },
-        
+		paidAt: {
+			type: Date,
+		},
+		isDelivered: {
+			type: Boolean,
+			require: true,
+			default: false,
+		},
+		deliveredAt: {
+			type: Date,
+		},
 	},
 	{
 		timestamps: true,
 	}
 )
 
-const Order = mongoose.model("Order", orderShema)
+const Order = mongoose.model("Order", orderSchema)
 
 export default Order
