@@ -10,7 +10,7 @@ import { login } from "../actions/userActions"
 const LoginScreen = () => {
 	const [email, setEmail] = useState("")
 	const [password, setPassword] = useState("")
-	const navigate = useNavigate() //props.history doesnt exist so use useNavigate()
+	const navigate = useNavigate()
 
 	const dispatch = useDispatch()
 	const userLogin = useSelector(state => state.userLogin)
@@ -27,7 +27,7 @@ const LoginScreen = () => {
 	}, [navigate, userInfo, redirect])
 
 	const submitHandler = e => {
-		e.preventDefault() // prevent page from refreshing
+		e.preventDefault()
 		dispatch(login(email, password))
 	}
 
