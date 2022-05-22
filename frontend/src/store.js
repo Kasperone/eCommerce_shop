@@ -1,4 +1,9 @@
-import { createStore, combineReducers, applyMiddleware, compose } from "redux"
+import {
+	legacy_createStore as createStore,
+	combineReducers,
+	applyMiddleware,
+	compose,
+} from "redux"
 import thunk from "redux-thunk"
 import {
 	productListReducer,
@@ -9,6 +14,7 @@ import {
 	userLoginReducer,
 	userRegisterReducer,
 	userDetailsReducer,
+	userUpdateProfileReducer,
 } from "./reducers/userReducers"
 
 const reducer = combineReducers({
@@ -18,6 +24,7 @@ const reducer = combineReducers({
 	userLogin: userLoginReducer,
 	userRegister: userRegisterReducer,
 	userDetails: userDetailsReducer,
+	userUpdateProflie: userUpdateProfileReducer,
 })
 
 const cartItemsFromStorage = localStorage.getItem("cartItems")
